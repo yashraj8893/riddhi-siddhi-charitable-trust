@@ -165,7 +165,7 @@ export default function HomeView({
                         {PRESET_AMOUNTS.find(p => p.amt === heroAmount && !heroCustomAmount)?.desc}
                       </span>
                     </div>
-                    <div className="grid grid-cols-5 gap-1.5">
+                    <div className="grid grid-cols-3 sm:grid-cols-5 gap-1.5">
                       {PRESET_AMOUNTS.map((p) => (
                         <button
                           key={p.amt}
