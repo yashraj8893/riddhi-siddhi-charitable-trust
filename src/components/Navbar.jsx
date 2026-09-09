@@ -354,11 +354,10 @@ export default function Navbar({
             {/* Donate Now Button */}
             <button 
               onClick={() => onOpenDonate()}
-              className="relative group overflow-hidden bg-gradient-to-r from-crimson-500 via-rose-600 to-crimson-600 text-white text-xs sm:text-sm font-bold px-5 sm:px-6 py-2.5 rounded-full shadow-[0_4px_14px_rgba(203,33,81,0.35)] hover:shadow-[0_6px_20px_rgba(203,33,81,0.45)] hover:scale-105 active:scale-95 transition-all flex items-center gap-2 border border-white/20"
+              className="btn-donate-primary text-xs sm:text-sm font-bold px-5 sm:px-6 py-2.5 rounded-full flex items-center gap-2 cursor-pointer"
             >
-              <span className="absolute inset-0 w-full h-full bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out pointer-events-none"></span>
-              <Heart className="w-4 h-4 fill-white animate-pulse" />
-              <span className="relative">Donate Now</span>
+              <Heart className="w-4 h-4 fill-white" />
+              <span>Donate Now</span>
             </button>
 
             {/* Mobile Hamburger Button */}

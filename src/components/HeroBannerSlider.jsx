@@ -143,7 +143,7 @@ export default function HeroBannerSlider({ setActiveView, onOpenDonate }) {
           <div className="absolute bottom-2.5 sm:bottom-6 right-2.5 sm:right-8 z-20 flex items-center gap-1.5 sm:gap-2">
             <button
               onClick={handleDonateAction}
-              className="px-3 sm:px-6 py-1.5 sm:py-2.5 bg-crimson-600 hover:bg-crimson-700 text-white font-extrabold text-[11px] sm:text-sm rounded-full shadow-lg hover:scale-105 active:scale-95 transition-all flex items-center gap-1 sm:gap-1.5 border border-white/20 animate-pulse"
+              className="btn-donate-primary px-3.5 sm:px-6 py-1.5 sm:py-2.5 text-[11px] sm:text-sm font-bold flex items-center gap-1 sm:gap-1.5 cursor-pointer"
             >
               <Heart className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-white" />
               <span>{currentSlide.btnText || "Donate Now"}</span>

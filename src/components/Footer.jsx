@@ -47,7 +47,7 @@ export default function Footer({ setActiveView, onOpenDonate, onOpenTaxCalc, onO
             </button>
             <button
               onClick={onOpenDonate}
-              className="px-5 py-2 bg-crimson-500 hover:bg-crimson-600 text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg transition-all"
+              className="btn-donate-primary px-5 py-2 text-xs sm:text-sm font-bold rounded-xl shadow-md transition-all"
             >
               Donate with 80G
             </button>
