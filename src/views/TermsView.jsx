@@ -4,21 +4,21 @@ import { TRUST_INFO } from '../data/trustData';
 
 export default function TermsView() {
   return (
-    <div className="space-y-12 py-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="space-y-6 sm:space-y-8 py-6 sm:py-8 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div className="text-center space-y-2">
-        <div className="inline-flex items-center gap-2 bg-trust-50 text-trust-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+      <div className="text-center space-y-1.5">
+        <div className="inline-flex items-center gap-2 bg-trust-50 text-trust-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
           <ShieldCheck className="w-4 h-4 text-emerald-600" /> Regulatory Compliance
         </div>
-        <h1 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900">
-          Terms & Conditions, Privacy & 80G Policy
+        <h1 className="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">
+          Terms &amp; Conditions, Privacy &amp; 80G Policy
         </h1>
         <p className="text-xs sm:text-sm text-slate-500">
           Last Updated: {new Date().getFullYear()} • Riddhi Siddhi Charitable Trust (Reg No. {TRUST_INFO.regNo})
         </p>
       </div>
 
-      <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200/80 shadow-lg space-y-8 text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
+      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-md space-y-6 text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
         
         {/* Section 1 */}
         <section className="space-y-2">

@@ -9,7 +9,7 @@ export default function CausesMedicalView({ onOpenDonate }) {
   const [selectedCase, setSelectedCase] = useState(null);
 
   return (
-    <div className="space-y-16 sm:space-y-20 py-10">
+    <div className="space-y-8 sm:space-y-12 py-6 sm:py-8">
       
       {/* Page Header Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

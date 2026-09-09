@@ -23,21 +23,21 @@ export default function ContactView() {
   };
 
   return (
-    <div className="space-y-16 sm:space-y-20 py-10">
+    <div className="space-y-8 sm:space-y-12 py-6 sm:py-8">
       
       {/* Hero Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#FFFDF9] rounded-3xl p-8 sm:p-12 lg:p-14 border border-amber-200/80 shadow-sm relative overflow-hidden">
-          <div className="relative z-10 max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 bg-crimson-50 border border-crimson-200 text-crimson-800 px-3.5 py-1.5 rounded-full text-xs font-bold">
-              <Phone className="w-4 h-4 text-crimson-600" /> Dedicated Helpline &amp; Donor Support
+        <div className="bg-[#FFFDF9] rounded-3xl p-6 sm:p-8 lg:p-10 border border-amber-200/80 shadow-sm relative overflow-hidden">
+          <div className="relative z-10 max-w-3xl space-y-3">
+            <div className="inline-flex items-center gap-2 bg-crimson-50 border border-crimson-200 text-crimson-800 px-3 py-1 rounded-full text-xs font-bold">
+              <Phone className="w-3.5 h-3.5 text-crimson-600" /> Dedicated Helpline &amp; Donor Support
             </div>
 
-            <h1 className="font-display font-extrabold text-3xl sm:text-5xl text-slate-900 tracking-tight">
+            <h1 className="font-display font-extrabold text-2xl sm:text-4xl text-slate-900 tracking-tight">
               Contact Riddhi Siddhi Charitable Trust
             </h1>
 
-            <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed">
+            <p className="text-slate-600 text-xs sm:text-sm lg:text-base leading-relaxed">
               Have questions about donating, volunteering, CSR collaborations, or Section 80G tax certificates? Our dedicated team is here to assist you.
             </p>
           </div>
@@ -46,13 +46,13 @@ export default function ContactView() {
 
       {/* CONTACT INFORMATION & FORM CONTAINER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           
           {/* Left Column: Office Details & Direct Map */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-5">
             
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-lg space-y-6">
-              <h2 className="font-display font-extrabold text-2xl text-slate-900">
+            <div className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200/80 shadow-md space-y-4">
+              <h2 className="font-display font-extrabold text-xl sm:text-2xl text-slate-900">
                 Head Office Info
               </h2>
 
@@ -138,14 +138,14 @@ export default function ContactView() {
 
           {/* Right Column: Contact & Message Form */}
           <div className="lg:col-span-7">
-            <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-xl space-y-6">
+            <div className="bg-white rounded-3xl p-5 sm:p-8 border border-slate-200/80 shadow-md space-y-5">
               
               <div>
                 <span className="text-xs font-bold text-crimson-600 uppercase tracking-wider block">Reach Out Online</span>
-                <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">
+                <h2 className="font-display font-extrabold text-xl sm:text-2xl text-slate-900">
                   Send Us a Direct Message
                 </h2>
-                <p className="text-slate-500 text-xs sm:text-sm mt-1">
+                <p className="text-slate-500 text-xs sm:text-sm mt-0.5">
                   Fill in your details below and our team will get back to you within 24 business hours.
                 </p>
               </div>

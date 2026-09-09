@@ -14,14 +14,14 @@ import {
 
 export default function ShelterOrphanageView({ onOpenDonate, onOpenLightbox }) {
   return (
-    <div className="space-y-16 sm:space-y-24 py-10">
+    <div className="space-y-8 sm:space-y-12 py-6 sm:py-8">
       
       {/* Page Header Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#FFFDF9] rounded-3xl p-8 sm:p-12 lg:p-14 border border-amber-200/80 shadow-sm relative overflow-hidden">
-          <div className="relative z-10 max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-800 px-3.5 py-1.5 rounded-full text-xs font-bold">
-              <HomeIcon className="w-4 h-4 text-amber-600" /> Airoli, Mumbai Residential Facility • 65+ Resident Children
+        <div className="bg-gradient-to-b from-trust-50/40 via-white to-slate-50/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border border-slate-200/80 shadow-xs relative overflow-hidden">
+          <div className="relative z-10 max-w-3xl space-y-3">
+            <div className="inline-flex items-center gap-2 bg-trust-50 border border-trust-200 text-trust-800 px-3 py-1 rounded-full text-xs font-bold">
+              <HomeIcon className="w-3.5 h-3.5 text-trust-600" /> Airoli, Mumbai Residential Facility • 65+ Resident Children
             </div>
 
             <h1 className="font-display font-extrabold text-3xl sm:text-5xl text-slate-900 tracking-tight leading-tight">

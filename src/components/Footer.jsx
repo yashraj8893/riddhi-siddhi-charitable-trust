@@ -56,8 +56,8 @@ export default function Footer({ setActiveView, onOpenDonate, onOpenTaxCalc, onO
       </div>
 
       {/* Main Footer Columns */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           
           {/* Column 1: Organization Bio & Legal Stack */}
           <div className="space-y-4">

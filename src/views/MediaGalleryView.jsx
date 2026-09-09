@@ -62,21 +62,21 @@ export default function MediaGalleryView({ onOpenLightbox }) {
   };
 
   return (
-    <div className="space-y-12 sm:space-y-16 py-10">
+    <div className="space-y-8 sm:space-y-12 py-6 sm:py-8">
       
       {/* Hero Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#FFFDF9] rounded-3xl p-8 sm:p-12 lg:p-14 border border-amber-200/80 shadow-sm relative overflow-hidden">
-          <div className="relative z-10 max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 bg-crimson-50 border border-crimson-200 text-crimson-800 px-3.5 py-1.5 rounded-full text-xs font-bold">
-              <Sparkles className="w-4 h-4 text-crimson-600" /> Authentic Ground Impact Photography • 280+ Live Archive
+        <div className="bg-[#FFFDF9] rounded-3xl p-6 sm:p-8 lg:p-10 border border-amber-200/80 shadow-sm relative overflow-hidden">
+          <div className="relative z-10 max-w-3xl space-y-3">
+            <div className="inline-flex items-center gap-2 bg-crimson-50 border border-crimson-200 text-crimson-800 px-3 py-1 rounded-full text-xs font-bold">
+              <Sparkles className="w-3.5 h-3.5 text-crimson-600" /> Authentic Ground Impact Photography • 280+ Live Archive
             </div>
 
-            <h1 className="font-display font-extrabold text-3xl sm:text-5xl text-slate-900 tracking-tight leading-tight">
+            <h1 className="font-display font-extrabold text-2xl sm:text-4xl text-slate-900 tracking-tight leading-tight">
               Photo &amp; Video Media Gallery
             </h1>
 
-            <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed">
+            <p className="text-slate-600 text-xs sm:text-sm lg:text-base leading-relaxed">
               Witness authentic moments of relief, nourishment, foster care, and medical aid enabled by our ground teams and compassionate donors across Maharashtra and rural India.
             </p>
           </div>
@@ -84,7 +84,7 @@ export default function MediaGalleryView({ onOpenLightbox }) {
       </section>
 
       {/* TABS & CONTROLS */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
         
         {/* Photos vs Videos Toggle */}
         <div className="flex justify-center">
@@ -170,10 +170,10 @@ export default function MediaGalleryView({ onOpenLightbox }) {
       {/* GALLERY CONTENT */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {activeTab === 'photos' ? (
-          <div className="space-y-10">
+          <div className="space-y-6 sm:space-y-8">
             
             {/* Grid of Images */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5">
               {displayedItems.map((item) => (
                 <div
                   key={item.id}
@@ -207,10 +207,10 @@ export default function MediaGalleryView({ onOpenLightbox }) {
 
             {/* Load More Button */}
             {hasMore && (
-              <div className="text-center pt-4">
+              <div className="text-center pt-2">
                 <button
                   onClick={handleLoadMore}
-                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm rounded-full border border-slate-300 shadow-md hover:shadow-lg transition-all"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 bg-white hover:bg-slate-50 text-slate-800 font-bold text-xs sm:text-sm rounded-full border border-slate-300 shadow-sm hover:shadow transition-all"
                 >
                   <ChevronDown className="w-4 h-4 text-crimson-600" />
                   <span>Load More Ground Photos ({filteredItems.length - displayedItems.length} remaining)</span>
@@ -221,8 +221,8 @@ export default function MediaGalleryView({ onOpenLightbox }) {
           </div>
         ) : (
           /* Video Tab Showcase */
-          <div className="space-y-8">
-            <div className="text-center max-w-2xl mx-auto space-y-2">
+          <div className="space-y-6 sm:space-y-8">
+            <div className="text-center max-w-2xl mx-auto space-y-1.5">
               <span className="text-xs font-bold text-trust-600 uppercase tracking-wider">Documentary Footage</span>
               <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">
                 Official Video Reports from the Ground
@@ -232,7 +232,7 @@ export default function MediaGalleryView({ onOpenLightbox }) {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
               {TRUST_VIDEOS.map((video) => (
                 <div 
                   key={video.id} 
@@ -248,7 +248,7 @@ export default function MediaGalleryView({ onOpenLightbox }) {
                     />
                   </div>
 
-                  <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
+                  <div className="p-5 space-y-2.5 flex-1 flex flex-col justify-between">
                     <div>
                       <span className="text-[10px] font-extrabold text-crimson-600 uppercase tracking-wider bg-crimson-50 px-2.5 py-1 rounded-full inline-block mb-2">
                         {video.category}

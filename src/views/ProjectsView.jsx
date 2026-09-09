@@ -122,7 +122,7 @@ export default function ProjectsView({
     : DEFAULT_TIERS;
 
   return (
-    <div className="space-y-12 sm:space-y-16 py-8 sm:py-12">
+    <div className="space-y-8 sm:space-y-12 py-6 sm:py-8">
       
       {/* ========================================================================= */}
       {/* 🌟 SCENARIO A: SINGLE PROJECT DEDICATED SPOTLIGHT VIEW */}
@@ -502,21 +502,21 @@ export default function ProjectsView({
         /* ========================================================================= */
         /* 🌟 SCENARIO B: ALL 9 PROJECTS FULL GALLERY & CATEGORY VIEW */
         /* ========================================================================= */
-        <div className="space-y-12 sm:space-y-16">
+        <div className="space-y-8 sm:space-y-12">
           
           {/* Page Header Hero */}
           <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#FFFDF9] rounded-3xl p-8 sm:p-12 lg:p-14 border border-amber-200/80 shadow-sm relative overflow-hidden">
-              <div className="relative z-10 max-w-3xl space-y-4">
-                <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-800 px-3.5 py-1.5 rounded-full text-xs font-bold">
-                  <ShieldCheck className="w-4 h-4 text-emerald-600" /> 9 Core Grassroots Social Initiatives • 100% Tax Deductible
+            <div className="bg-[#FFFDF9] rounded-3xl p-6 sm:p-8 lg:p-10 border border-amber-200/80 shadow-sm relative overflow-hidden">
+              <div className="relative z-10 max-w-3xl space-y-3">
+                <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-800 px-3 py-1 rounded-full text-xs font-bold">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> 9 Core Grassroots Social Initiatives • 100% Tax Deductible
                 </div>
 
-                <h1 className="font-display font-extrabold text-3xl sm:text-5xl text-slate-900 tracking-tight">
+                <h1 className="font-display font-extrabold text-2xl sm:text-4xl text-slate-900 tracking-tight">
                   Our Projects &amp; Humanitarian Campaigns
                 </h1>
 
-                <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed">
+                <p className="text-slate-600 text-xs sm:text-sm lg:text-base leading-relaxed">
                   Every initiative is direct, personal, and urgent. Click on any project to explore its full story, field impact metrics, and support the causes closest to your heart with 50% Section 80G tax exemption.
                 </p>
               </div>

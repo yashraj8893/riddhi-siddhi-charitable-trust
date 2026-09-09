@@ -25,21 +25,21 @@ export default function CSRView({ onOpenDonate }) {
   };
 
   return (
-    <div className="space-y-16 sm:space-y-20 py-10">
+    <div className="space-y-8 sm:space-y-12 py-6 sm:py-8">
       
       {/* Hero Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#FFFDF9] rounded-3xl p-8 sm:p-12 lg:p-14 border border-amber-200/80 shadow-sm relative overflow-hidden">
-          <div className="relative z-10 max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-800 px-3.5 py-1.5 rounded-full text-xs font-bold">
-              <Building2 className="w-4 h-4 text-amber-600" /> Schedule VII Corporate Social Responsibility (CSR)
+        <div className="bg-[#FFFDF9] rounded-3xl p-6 sm:p-8 lg:p-10 border border-amber-200/80 shadow-sm relative overflow-hidden">
+          <div className="relative z-10 max-w-3xl space-y-3">
+            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-800 px-3 py-1 rounded-full text-xs font-bold">
+              <Building2 className="w-3.5 h-3.5 text-amber-600" /> Schedule VII Corporate Social Responsibility (CSR)
             </div>
 
-            <h1 className="font-display font-extrabold text-3xl sm:text-5xl text-slate-900 tracking-tight">
+            <h1 className="font-display font-extrabold text-2xl sm:text-4xl text-slate-900 tracking-tight">
               Partner with Us for High-Impact CSR
             </h1>
 
-            <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed">
+            <p className="text-slate-600 text-xs sm:text-sm lg:text-base leading-relaxed">
               Riddhi Siddhi Charitable Trust partners with leading corporate enterprises under Schedule VII of the Companies Act 2013 to execute measurable school renovations, drinking water plants, hunger alleviation, and healthcare projects.
             </p>
           </div>
@@ -47,22 +47,22 @@ export default function CSRView({ onOpenDonate }) {
       </section>
 
       {/* BEFORE & AFTER SHOWCASE */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-        <div className="text-center max-w-2xl mx-auto space-y-2">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
+        <div className="text-center max-w-2xl mx-auto space-y-1.5">
           <span className="text-xs font-bold text-crimson-600 uppercase tracking-wider">Completed CSR Work</span>
-          <h2 className="font-display font-extrabold text-2xl sm:text-4xl text-slate-900 tracking-tight">
-            Before & After Renovation Highlights
+          <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-slate-900 tracking-tight">
+            Before &amp; After Renovation Highlights
           </h2>
           <p className="text-slate-600 text-xs sm:text-sm">
             See the transformative tangible difference made by our corporate partners across Maharashtra government schools.
           </p>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {CSR_INITIATIVES.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-lg grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+              className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200/80 shadow-md grid grid-cols-1 lg:grid-cols-12 gap-6 items-center"
             >
               {/* Single Full Transformation Image */}
               <div className="lg:col-span-5">
@@ -119,10 +119,10 @@ export default function CSRView({ onOpenDonate }) {
       </section>
 
       {/* 🌟 CSR THEMATIC FOCUS AREAS (SCHEDULE VII) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="text-center max-w-2xl mx-auto space-y-2">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <div className="text-center max-w-2xl mx-auto space-y-1.5">
           <span className="text-xs font-bold text-trust-600 uppercase tracking-wider">Schedule VII Aligned</span>
-          <h2 className="font-display font-extrabold text-2xl sm:text-4xl text-slate-900 tracking-tight">
+          <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-slate-900 tracking-tight">
             Key CSR Thematic Areas
           </h2>
           <p className="text-slate-600 text-xs sm:text-sm">
@@ -130,11 +130,11 @@ export default function CSRView({ onOpenDonate }) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {CSR_THEMATIC_AREAS.map((theme, idx) => (
             <div 
               key={idx}
-              className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all flex flex-col justify-between group"
+              className="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
             >
               <div className="aspect-[4/3] w-full overflow-hidden relative">
                 <img 
@@ -143,8 +143,8 @@ export default function CSRView({ onOpenDonate }) {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-5 space-y-2">
-                <h3 className="font-display font-bold text-base text-slate-900 leading-snug">
+              <div className="p-4 space-y-1.5">
+                <h3 className="font-display font-bold text-sm sm:text-base text-slate-900 leading-snug">
                   {theme.title}
                 </h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
@@ -158,11 +158,11 @@ export default function CSRView({ onOpenDonate }) {
 
       {/* CSR INQUIRY & PROPOSAL BUILDER */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-trust-900 to-slate-950 text-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-slate-800">
+        <div className="bg-gradient-to-br from-trust-900 to-slate-950 text-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-800">
           
-          <div className="text-center max-w-xl mx-auto mb-8 space-y-2">
+          <div className="text-center max-w-xl mx-auto mb-6 space-y-1.5">
             <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">Corporate Collaboration</span>
-            <h3 className="font-display font-bold text-2xl sm:text-3xl text-white">
+            <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
               Request a Custom CSR Proposal
             </h3>
             <p className="text-slate-300 text-xs sm:text-sm">
