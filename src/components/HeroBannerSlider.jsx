@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, Heart, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
-import { HERO_SLIDES, GALLERY_ITEMS } from '../data/trustData';
-
-// Pick 12 diverse ground impact photos for the continuous moving photo track
-const STREAM_PHOTOS = GALLERY_ITEMS.slice(0, 12);
+import { ChevronLeft, ChevronRight, Heart, ArrowRight, ShieldCheck } from 'lucide-react';
+import { HERO_SLIDES } from '../data/trustData';
 
 export default function HeroBannerSlider({ setActiveView, onOpenDonate }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -198,51 +195,6 @@ export default function HeroBannerSlider({ setActiveView, onOpenDonate }) {
             ))}
           </div>
 
-        </div>
-      </div>
-
-      {/* 🌟 2. CONTINUOUSLY MOVING PHOTO STREAM (MARQUEE) */}
-      <div className="bg-slate-900 border-y border-slate-800 py-3 overflow-hidden relative">
-        <div className="max-w-7xl mx-auto px-4 mb-2 flex items-center justify-between text-xs">
-          <div className="flex items-center gap-2 text-slate-300 font-bold">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-            <span className="uppercase tracking-wider text-[11px] text-amber-400 font-extrabold">Live Ground Operations</span>
-            <span className="hidden sm:inline text-slate-400 font-normal">• 280+ Real Beneficiary Photos</span>
-          </div>
-          <button
-            onClick={() => { setActiveView('media'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-            className="text-xs font-bold text-trust-300 hover:text-white flex items-center gap-1 transition-colors"
-          >
-            <span>View Full Archive</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
-        </div>
-
-        {/* Seamless Infinite Photo Stream Track */}
-        <div className="w-full overflow-hidden flex">
-          <div className="animate-photo-marquee flex items-center gap-3">
-            {[...STREAM_PHOTOS, ...STREAM_PHOTOS].map((photo, idx) => (
-              <div
-                key={`${photo.id}-${idx}`}
-                onClick={() => { setActiveView('media'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                className="w-40 sm:w-52 h-24 sm:h-32 rounded-xl overflow-hidden flex-shrink-0 relative group/card cursor-pointer border border-slate-800 bg-slate-950 shadow-md hover:scale-105 transition-transform"
-              >
-                <img
-                  src={photo.image}
-                  alt={photo.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-500"
-                  onError={(e) => {
-                    e.target.src = "https://www.riddhisiddhicharitabletrust.org/static/images/homepage/Our-Mission.webp";
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity p-2 flex flex-col justify-end text-white text-[10px]">
-                  <span className="font-bold text-amber-300 truncate">{photo.category}</span>
-                  <span className="truncate text-slate-200">{photo.title}</span>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 
