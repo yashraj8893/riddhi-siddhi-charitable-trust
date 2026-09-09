@@ -9,6 +9,7 @@ import {
   TRUST_INFO, IMPACT_STATS, CORE_PROJECTS, MEDICAL_APPEALS, 
   CORPORATE_PARTNERS 
 } from '../data/trustData';
+import HeroBannerSlider from '../components/HeroBannerSlider';
 
 const PRESET_AMOUNTS = [
   { amt: 650, desc: "1 School Kit & Rainwear" },
@@ -47,8 +48,14 @@ export default function HomeView({
   return (
     <div className="space-y-8 sm:space-y-12 pb-12">
       
-      {/* 🌟 1. HERO SECTION (COMPACT & HIGH-IMPACT) */}
-      <section className="relative bg-gradient-to-b from-trust-50/30 via-white to-slate-50/40 border-b border-slate-200/60 pt-6 pb-8 lg:pt-8 lg:pb-10">
+      {/* 🌟 0. OFFICIAL HERO BANNER SLIDER (AUTHENTIC RSCT GRAPHIC SLIDES) */}
+      <HeroBannerSlider 
+        setActiveView={setActiveView} 
+        onOpenDonate={onOpenDonate} 
+      />
+      
+      {/* 🌟 1. MISSION & QUICK GIVING SECTION */}
+      <section className="relative bg-gradient-to-b from-trust-50/30 via-white to-slate-50/40 border-b border-slate-200/60 pt-4 pb-8 lg:pt-6 lg:pb-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             

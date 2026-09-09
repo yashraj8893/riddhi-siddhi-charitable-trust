@@ -34,6 +34,119 @@ export const TRUST_INFO = {
   taxExemptionText: "Under Section 80G of Income Tax Act 1961, donors are entitled to a 50% Tax Exemption on their donations. Donor PAN is mandatory to issue an official 10BE Tax Certificate."
 };
 
+export const HERO_SLIDES = [
+  {
+    id: "school-kits",
+    image: "https://www.riddhisiddhicharitabletrust.org/static/images/homepage/Education.webp",
+    title: "Sponsor a Child's Education Kit",
+    subtitle: "Stand with underprivileged children for a better tomorrow",
+    linkView: "projects",
+    projectId: "school-kits",
+    btnText: "Donate a Kit",
+    alt: "Sponsor a Child's Education Kit - Riddhi Siddhi Charitable Trust"
+  },
+  {
+    id: "shelter",
+    image: "https://www.riddhisiddhicharitabletrust.org/static/images/homepage/Our-Orphanage-A-Future-Full-of-Hope.webp",
+    title: "Our Orphanage - A Future Full of Hope",
+    subtitle: "Providing safe shelter, loving care, and quality education at Airoli",
+    linkView: "shelter",
+    projectId: "shelter",
+    btnText: "Support Our Shelter",
+    alt: "Supporting Orphans at Airoli Shelter Home"
+  },
+  {
+    id: "medical",
+    image: "https://www.riddhisiddhicharitabletrust.org/static/images/homepage/Medical-support.webp",
+    title: "Urgent Medical & Surgery Support",
+    subtitle: "Funding life-saving pediatric surgeries and critical treatments",
+    linkView: "causes",
+    projectId: "health",
+    btnText: "Save a Life Today",
+    alt: "Medical Support for Underprivileged Children"
+  },
+  {
+    id: "about-trust",
+    image: "https://www.riddhisiddhicharitabletrust.org/static/images/homepage/Riddhi-Siddh-Charitable-Trust-A-Leading-Non-Profit-Organisation-in-India.webp",
+    title: "Riddhi Siddhi Charitable Trust",
+    subtitle: "A leading non-profit organization transforming lives across India since 2014",
+    linkView: "about",
+    projectId: null,
+    btnText: "Know Our Story",
+    alt: "Riddhi Siddhi Charitable Trust - Non Profit Organisation"
+  },
+  {
+    id: "education-empower",
+    image: "https://www.riddhisiddhicharitabletrust.org/static/images/homepage/Empowering-the-Next-Generation-with-Knowledge.webp",
+    title: "Empowering the Next Generation with Knowledge",
+    subtitle: "Ensuring zero school dropouts with educational kits and uniforms",
+    linkView: "projects",
+    projectId: "education",
+    btnText: "Educate a Child",
+    alt: "Empowering the Next Generation with Knowledge"
+  },
+  {
+    id: "senior-care",
+    image: "https://www.riddhisiddhicharitabletrust.org/static/images/homepage/Dignity-and-Care-for-Every-Senior.webp",
+    title: "Dignity and Care for Every Senior",
+    subtitle: "Providing loving geriatric care and shelter for destitute elderly souls",
+    linkView: "projects",
+    projectId: "old-age",
+    btnText: "Adopt an Elder",
+    alt: "Dignity and Care for Every Senior"
+  },
+  {
+    id: "health-tomorrow",
+    image: "https://www.riddhisiddhicharitabletrust.org/static/images/homepage/A-Healthier-Tomorrow-Starts-Today.webp",
+    title: "A Healthier Tomorrow Starts Today",
+    subtitle: "Free health checkups, medicine drives, and specialized treatments",
+    linkView: "causes",
+    projectId: "health",
+    btnText: "Support Healthcare",
+    alt: "A Healthier Tomorrow Starts Today"
+  },
+  {
+    id: "medical-care",
+    image: "https://www.riddhisiddhicharitabletrust.org/static/images/homepage/Providing-Medical-Care-for-the-Underprivileged.webp",
+    title: "Providing Medical Care for the Underprivileged",
+    subtitle: "Emergency ICU funding and surgery relief for impoverished families",
+    linkView: "causes",
+    projectId: "health",
+    btnText: "Donate Medical Aid",
+    alt: "Providing Medical Care for Underprivileged"
+  },
+  {
+    id: "women-empower",
+    image: "https://www.riddhisiddhicharitabletrust.org/static/images/homepage/rs-livielihood-banner.webp",
+    title: "Women Empowerment & Skill Livelihood",
+    subtitle: "Vocational sewing training and micro-enterprise kits for women",
+    linkView: "projects",
+    projectId: "women-empowerment",
+    btnText: "Empower Women",
+    alt: "Women Livelihood and Empowerment"
+  },
+  {
+    id: "disaster-relief",
+    image: "https://www.riddhisiddhicharitabletrust.org/static/images/homepage/Saving-Lives-in-Times-of-Crisis.webp",
+    title: "Saving Lives in Times of Crisis",
+    subtitle: "Rapid disaster food, water, and hygiene kits during monsoons and floods",
+    linkView: "projects",
+    projectId: "disaster-relief",
+    btnText: "Disaster Relief Fund",
+    alt: "Saving Lives in Times of Crisis"
+  },
+  {
+    id: "animal-welfare",
+    image: "https://www.riddhisiddhicharitabletrust.org/static/images/homepage/Compassion-for-All-Living-Beings.webp",
+    title: "Compassion for All Living Beings",
+    subtitle: "Daily feeding and medical care for injured and hungry stray animals",
+    linkView: "projects",
+    projectId: "animal-welfare",
+    btnText: "Feed Stray Animals",
+    alt: "Compassion for All Living Beings"
+  }
+];
+
 export const IMPACT_STATS = [
   { label: "Hot Meals Distributed", value: "150,000+", numeric: 150000, suffix: "+", icon: "Utensils", color: "from-amber-500 to-orange-600" },
   { label: "Children Educated", value: "12,500+", numeric: 12500, suffix: "+", icon: "GraduationCap", color: "from-blue-600 to-indigo-700" },
