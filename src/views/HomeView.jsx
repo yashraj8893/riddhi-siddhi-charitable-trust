@@ -48,7 +48,7 @@ export default function HomeView({
     <div className="space-y-16 sm:space-y-24 pb-20">
       
       {/* 🌟 1. HERO SECTION (CLEAN, AIRY & IMPACTFUL) */}
-      <section className="relative bg-gradient-to-b from-amber-50/30 via-white to-slate-50/40 border-b border-slate-200/60 pt-10 pb-14 lg:pt-14 lg:pb-20">
+      <section className="relative bg-gradient-to-b from-trust-50/30 via-white to-slate-50/40 border-b border-slate-200/60 pt-10 pb-14 lg:pt-14 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             
@@ -56,13 +56,13 @@ export default function HomeView({
             <div className="lg:col-span-7 space-y-6 text-left">
               
               {/* Trust Badge */}
-              <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-800 px-3.5 py-1.5 rounded-full text-xs font-bold">
-                <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+              <div className="inline-flex items-center gap-2 bg-trust-50 border border-trust-200/80 text-trust-800 px-3.5 py-1.5 rounded-full text-xs font-bold shadow-xs">
+                <ShieldCheck className="w-4 h-4 text-trust-600 flex-shrink-0" />
                 <span>Section 80G Certified • 50% Tax Exemption • Estd. 2014</span>
               </div>
 
               {/* Dignified Editorial Headline */}
-              <h1 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-slate-950 tracking-tight leading-[1.18]">
+              <h1 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-trust-950 tracking-tight leading-[1.18]">
                 Every child nourished, <br />
                 every life healed, <br />
                 <span className="text-crimson-600">every elder honored.</span>
@@ -70,7 +70,7 @@ export default function HomeView({
 
               {/* Mission Statement */}
               <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl">
-                Since 2014, <strong className="text-slate-900 font-semibold">Riddhi Siddhi Charitable Trust</strong> has been on the frontlines across Maharashtra—providing safe 24/7 shelter for orphaned children in Airoli, daily meals for daily-wage families, and funding life-saving pediatric surgeries.
+                Since 2014, <strong className="text-trust-900 font-semibold">Riddhi Siddhi Charitable Trust</strong> has been on the frontlines across Maharashtra—providing safe 24/7 shelter for orphaned children in Airoli, daily meals for daily-wage families, and funding life-saving pediatric surgeries.
               </p>
 
               {/* Primary Action Buttons */}
@@ -84,7 +84,7 @@ export default function HomeView({
                 </button>
                 <button
                   onClick={() => navTo('projects')}
-                  className="px-6 py-3 bg-white hover:bg-slate-50 text-slate-700 font-bold text-sm rounded-full border border-slate-200 hover:border-slate-300 shadow-sm transition-all flex items-center gap-1.5"
+                  className="px-6 py-3 bg-white hover:bg-trust-50 text-trust-900 font-bold text-sm rounded-full border border-slate-200 hover:border-trust-300 shadow-sm transition-all flex items-center gap-1.5"
                 >
                   <span>Explore 9 Programs</span>
                   <ArrowRight className="w-4 h-4 text-slate-400" />
@@ -94,16 +94,16 @@ export default function HomeView({
               {/* Key Trust Counters */}
               <div className="pt-6 border-t border-slate-200/70 grid grid-cols-3 gap-4 max-w-lg">
                 <div>
-                  <span className="block font-display font-black text-xl sm:text-2xl text-slate-900 font-mono">150,000+</span>
+                  <span className="block font-display font-black text-xl sm:text-2xl text-trust-950 font-mono">150,000+</span>
                   <span className="text-xs text-slate-500 font-medium">Meals Provided</span>
                 </div>
                 <div>
-                  <span className="block font-display font-black text-xl sm:text-2xl text-slate-900 font-mono">65+</span>
+                  <span className="block font-display font-black text-xl sm:text-2xl text-trust-950 font-mono">65+</span>
                   <span className="text-xs text-slate-500 font-medium">Children in Shelter</span>
                 </div>
                 <div>
-                  <span className="block font-display font-black text-xl sm:text-2xl text-emerald-600 font-mono">50%</span>
-                  <span className="text-xs text-slate-500 font-medium">80G Tax Exemption</span>
+                  <span className="block font-display font-black text-xl sm:text-2xl text-crimson-600 font-mono">50%</span>
+                  <span className="text-xs text-slate-500 font-medium">80G Tax Saved</span>
                 </div>
               </div>
 
@@ -115,11 +115,11 @@ export default function HomeView({
                 
                 {/* Giving Box Header */}
                 <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
-                  <div className="flex items-center gap-2 text-xs font-bold text-slate-900">
+                  <div className="flex items-center gap-2 text-xs font-bold text-trust-950">
                     <Heart className="w-4 h-4 text-crimson-600 fill-crimson-600" />
                     <span>Quick Contribution</span>
                   </div>
-                  <span className="text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                  <span className="text-[10px] font-bold bg-trust-50 text-trust-700 border border-trust-200 px-2.5 py-0.5 rounded-full">
                     80G Tax Deductible
                   </span>
                 </div>
@@ -132,7 +132,7 @@ export default function HomeView({
                       type="button"
                       onClick={() => setHeroIsMonthly(false)}
                       className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition-all ${
-                        !heroIsMonthly ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-800'
+                        !heroIsMonthly ? 'bg-white text-trust-900 shadow-sm' : 'text-slate-500 hover:text-slate-800'
                       }`}
                     >
                       Give Once
@@ -166,7 +166,7 @@ export default function HomeView({
                           onClick={() => { setHeroAmount(p.amt); setHeroCustomAmount(''); }}
                           className={`py-2 px-1 rounded-xl text-xs font-bold border transition-all text-center ${
                             heroAmount === p.amt && !heroCustomAmount
-                              ? 'border-crimson-600 bg-crimson-50 text-crimson-700 shadow-sm ring-1 ring-crimson-500'
+                              ? 'border-crimson-600 bg-crimson-50 text-crimson-700 shadow-sm ring-1 ring-crimson-500 font-black'
                               : 'border-slate-200 text-slate-700 bg-slate-50/60 hover:bg-white hover:border-slate-300'
                           }`}
                         >
@@ -211,11 +211,11 @@ export default function HomeView({
                   </div>
 
                   {/* 80G Tax Benefit Summary */}
-                  <div className="bg-emerald-50/80 border border-emerald-200 rounded-xl p-2.5 text-xs text-emerald-900 flex items-center justify-between">
-                    <span className="text-[11px] font-medium text-emerald-800">
+                  <div className="bg-trust-50 border border-trust-200 rounded-xl p-2.5 text-xs text-trust-900 flex items-center justify-between">
+                    <span className="text-[11px] font-medium text-trust-800">
                       Estimated 80G Tax Saved (50% deduction):
                     </span>
-                    <span className="font-mono font-bold text-emerald-900">₹{estimatedTaxSaving.toLocaleString('en-IN')}</span>
+                    <span className="font-mono font-bold text-trust-950">₹{estimatedTaxSaving.toLocaleString('en-IN')}</span>
                   </div>
 
                   {/* Submit Button */}
@@ -241,14 +241,14 @@ export default function HomeView({
         </div>
       </section>
 
-      {/* 🌟 2. IMPACT AT A GLANCE (4 CLEAN STAT CARDS) */}
+      {/* 🌟 2. IMPACT AT A GLANCE (4 CLEAN STAT CARDS IN BRAND PALETTE) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 text-center hover:shadow-md transition-all">
-            <div className="w-11 h-11 mx-auto rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-3">
+            <div className="w-11 h-11 mx-auto rounded-xl bg-trust-50 text-trust-600 flex items-center justify-center mb-3">
               <Utensils className="w-5 h-5" />
             </div>
-            <span className="font-display font-black text-2xl sm:text-3xl text-slate-900 block font-mono">
+            <span className="font-display font-black text-2xl sm:text-3xl text-trust-950 block font-mono">
               150,000+
             </span>
             <span className="text-xs font-semibold text-slate-500 mt-1 block">
@@ -257,10 +257,10 @@ export default function HomeView({
           </div>
 
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 text-center hover:shadow-md transition-all">
-            <div className="w-11 h-11 mx-auto rounded-xl bg-trust-50 text-trust-600 flex items-center justify-center mb-3">
+            <div className="w-11 h-11 mx-auto rounded-xl bg-crimson-50 text-crimson-600 flex items-center justify-center mb-3">
               <GraduationCap className="w-5 h-5" />
             </div>
-            <span className="font-display font-black text-2xl sm:text-3xl text-slate-900 block font-mono">
+            <span className="font-display font-black text-2xl sm:text-3xl text-trust-950 block font-mono">
               5,000+
             </span>
             <span className="text-xs font-semibold text-slate-500 mt-1 block">
@@ -269,10 +269,10 @@ export default function HomeView({
           </div>
 
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 text-center hover:shadow-md transition-all">
-            <div className="w-11 h-11 mx-auto rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center mb-3">
+            <div className="w-11 h-11 mx-auto rounded-xl bg-trust-50 text-trust-700 flex items-center justify-center mb-3">
               <HeartHandshake className="w-5 h-5" />
             </div>
-            <span className="font-display font-black text-2xl sm:text-3xl text-slate-900 block font-mono">
+            <span className="font-display font-black text-2xl sm:text-3xl text-trust-950 block font-mono">
               1,200+
             </span>
             <span className="text-xs font-semibold text-slate-500 mt-1 block">
@@ -281,10 +281,10 @@ export default function HomeView({
           </div>
 
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 text-center hover:shadow-md transition-all">
-            <div className="w-11 h-11 mx-auto rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3">
+            <div className="w-11 h-11 mx-auto rounded-xl bg-crimson-50 text-crimson-600 flex items-center justify-center mb-3">
               <Activity className="w-5 h-5" />
             </div>
-            <span className="font-display font-black text-2xl sm:text-3xl text-slate-900 block font-mono">
+            <span className="font-display font-black text-2xl sm:text-3xl text-trust-950 block font-mono">
               500+
             </span>
             <span className="text-xs font-semibold text-slate-500 mt-1 block">
@@ -302,7 +302,7 @@ export default function HomeView({
               <span className="w-2 h-2 rounded-full bg-crimson-500 animate-pulse"></span>
               Emergency Medical Appeals
             </div>
-            <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-slate-900 tracking-tight">
+            <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-trust-950 tracking-tight">
               Critical Pediatric Surgeries
             </h2>
           </div>
@@ -331,14 +331,14 @@ export default function HomeView({
                 <div className="absolute top-3 right-3 bg-crimson-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm">
                   {appeal.disease}
                 </div>
-                <div className="absolute bottom-3 left-3 bg-black/70 backdrop-blur-sm text-white text-[11px] px-2.5 py-0.5 rounded-lg font-medium">
+                <div className="absolute bottom-3 left-3 bg-trust-950/80 backdrop-blur-sm text-white text-[11px] px-2.5 py-0.5 rounded-lg font-medium">
                   Age: {appeal.age} • {appeal.hospital}
                 </div>
               </div>
 
               <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div>
-                  <h3 className="font-display font-bold text-base sm:text-lg text-slate-900 mb-1">
+                  <h3 className="font-display font-bold text-base sm:text-lg text-trust-950 mb-1">
                     {appeal.patientName}
                   </h3>
                   <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
@@ -354,7 +354,7 @@ export default function HomeView({
                     </div>
                     <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-amber-500 to-crimson-500 rounded-full"
+                        className="h-full bg-gradient-to-r from-crimson-500 via-rose-500 to-crimson-600 rounded-full"
                         style={{ width: `${appeal.progress}%` }}
                       ></div>
                     </div>
@@ -369,7 +369,7 @@ export default function HomeView({
                     </button>
                     <button
                       onClick={() => navTo('causes')}
-                      className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition-colors"
+                      className="px-4 py-2.5 bg-trust-50 hover:bg-trust-100 text-trust-900 font-bold text-xs rounded-xl transition-colors"
                     >
                       Details
                     </button>
@@ -388,7 +388,7 @@ export default function HomeView({
             <span className="text-xs font-bold text-trust-600 uppercase tracking-wider block mb-1">
               9 Humanitarian Pillars
             </span>
-            <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-slate-900 tracking-tight">
+            <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-trust-950 tracking-tight">
               Our Core Social Programs
             </h2>
           </div>
@@ -422,7 +422,7 @@ export default function HomeView({
 
               <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
                 <div>
-                  <h3 className="font-display font-bold text-base text-slate-900 group-hover:text-crimson-600 transition-colors line-clamp-1">
+                  <h3 className="font-display font-bold text-base text-trust-950 group-hover:text-crimson-600 transition-colors line-clamp-1">
                     {project.title}
                   </h3>
                   <p className="text-xs text-slate-600 line-clamp-2 mt-1 leading-relaxed">
@@ -445,21 +445,21 @@ export default function HomeView({
 
       {/* 🌟 5. GROUND IMPACT: AIROLI SHELTER & FOUNDER SPOTLIGHT */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-50/80 rounded-3xl p-6 sm:p-10 border border-slate-200/80">
+        <div className="bg-trust-50/50 rounded-3xl p-6 sm:p-10 border border-trust-100">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Left Image Showcase */}
             <div className="lg:col-span-5">
-              <div className="aspect-[16/11] rounded-2xl overflow-hidden shadow-md border border-slate-200 relative group bg-slate-900">
+              <div className="aspect-[16/11] rounded-2xl overflow-hidden shadow-md border border-slate-200 relative group bg-trust-950">
                 <img 
                   src="https://www.riddhisiddhicharitabletrust.org/static/images/orphanage/Supporting-Orphans-A-Commitment-to-Social-Work-in-India.webp" 
                   alt="Children at Riddhi Siddhi Shelter Home, Airoli" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute top-3 left-3 bg-amber-500 text-slate-950 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase shadow">
+                <div className="absolute top-3 left-3 bg-crimson-600 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase shadow">
                   Airoli, Navi Mumbai
                 </div>
-                <div className="absolute bottom-3 inset-x-3 bg-black/70 backdrop-blur-md text-white p-3 rounded-xl text-xs font-semibold">
+                <div className="absolute bottom-3 inset-x-3 bg-trust-950/80 backdrop-blur-md text-white p-3 rounded-xl text-xs font-semibold">
                   65+ Resident Children • 4 Hot Meals Daily • School Education
                 </div>
               </div>
@@ -467,11 +467,11 @@ export default function HomeView({
 
             {/* Right Story Text */}
             <div className="lg:col-span-7 space-y-4 text-left">
-              <div className="inline-flex items-center gap-2 bg-amber-100/80 text-amber-900 text-xs px-3.5 py-1 rounded-full font-bold">
-                <HomeIcon className="w-3.5 h-3.5 text-amber-700" /> Full-Time Residential Care
+              <div className="inline-flex items-center gap-2 bg-trust-100/80 text-trust-900 text-xs px-3.5 py-1 rounded-full font-bold">
+                <HomeIcon className="w-3.5 h-3.5 text-trust-700" /> Full-Time Residential Care
               </div>
 
-              <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-slate-900 leading-tight">
+              <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-trust-950 leading-tight">
                 Shelter Home for Orphaned &amp; Destitute Children
               </h2>
 
@@ -488,7 +488,7 @@ export default function HomeView({
                 </button>
                 <button
                   onClick={() => navTo('shelter')}
-                  className="px-5 py-2.5 bg-white hover:bg-slate-100 text-slate-700 font-bold text-xs sm:text-sm rounded-full border border-slate-300 transition-all shadow-sm"
+                  className="px-5 py-2.5 bg-white hover:bg-trust-50 text-trust-900 font-bold text-xs sm:text-sm rounded-full border border-slate-300 transition-all shadow-sm"
                 >
                   Shelter Details &amp; Wishlist →
                 </button>
@@ -509,7 +509,7 @@ export default function HomeView({
           {CORPORATE_PARTNERS.slice(0, 6).map((partner, idx) => (
             <div
               key={idx}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-xl border border-slate-200 shadow-xs text-slate-700 text-xs font-bold"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-xl border border-slate-200 shadow-xs text-trust-950 text-xs font-bold"
             >
               {partner.logoUrl ? (
                 <img 
@@ -529,13 +529,13 @@ export default function HomeView({
         </div>
       </section>
 
-      {/* 🌟 7. FINAL HIGH-IMPACT CTA */}
+      {/* 🌟 7. FINAL HIGH-IMPACT CTA (AUTHENTIC TRUST GRADIENT) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-crimson-600 via-rose-600 to-crimson-700 text-white rounded-3xl p-8 sm:p-12 text-center space-y-4 shadow-xl">
+        <div className="bg-gradient-to-r from-trust-900 via-trust-800 to-crimson-800 text-white rounded-3xl p-8 sm:p-12 text-center space-y-4 shadow-xl">
           <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-white">
             Make a Direct Difference Today
           </h2>
-          <p className="text-rose-100 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
+          <p className="text-trust-100 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
             Every contribution brings warm food to an elder, a school kit to a rural child, or life-saving surgery to a patient. Claim your 50% Section 80G tax benefit with an instant receipt.
           </p>
           <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
