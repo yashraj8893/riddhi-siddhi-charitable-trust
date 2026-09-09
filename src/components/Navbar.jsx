@@ -65,8 +65,8 @@ export default function Navbar({
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-white/80 backdrop-blur-xl backdrop-saturate-150 shadow-sm border-b border-slate-200/60' 
-        : 'bg-white/75 backdrop-blur-lg backdrop-saturate-150 border-b border-slate-200/40'
+        ? 'bg-white/95 backdrop-blur-xl shadow-sm border-b border-slate-200' 
+        : 'bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-xs'
     }`}>
       {/* Top micro-bar for Contact & Quick Verification */}
       <div className="hidden lg:block bg-slate-50/70 backdrop-blur-md border-b border-slate-200/50 py-1.5 px-6 text-xs text-slate-600">

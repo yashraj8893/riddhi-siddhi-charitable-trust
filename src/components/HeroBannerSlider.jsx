@@ -83,24 +83,25 @@ export default function HeroBannerSlider({ setActiveView, onOpenDonate }) {
   };
 
   return (
-    <div className="w-full bg-slate-950 overflow-hidden select-none">
-      
-      {/* 🌟 MAIN HERO BANNER CAROUSEL WITH PHYSICAL HORIZONTAL SLIDE MOTION */}
-      <div 
-        className="relative w-full overflow-hidden group touch-pan-y"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
-        {/* Animated Moving Progress Bar at Top */}
-        <div className="absolute top-0 left-0 right-0 h-0.5 sm:h-1 bg-white/10 z-30 overflow-hidden pointer-events-none">
-          <div 
-            className="h-full bg-gradient-to-r from-amber-400 via-crimson-500 to-amber-400 transition-all ease-linear"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
+    <div className="w-full select-none pt-3 pb-1 sm:pt-4 sm:pb-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* 🌟 FRAMED HERO BANNER CAROUSEL WITH NICE BORDER & SHADOW */}
+        <div 
+          className="relative w-full rounded-2xl sm:rounded-3xl border-2 border-slate-200/90 shadow-lg hover:shadow-xl transition-shadow overflow-hidden group touch-pan-y bg-slate-950 ring-1 ring-slate-900/5"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {/* Animated Moving Progress Bar at Top */}
+          <div className="absolute top-0 left-0 right-0 h-0.5 sm:h-1 bg-white/10 z-30 overflow-hidden pointer-events-none">
+            <div 
+              className="h-full bg-gradient-to-r from-amber-400 via-crimson-500 to-amber-400 transition-all ease-linear"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
 
         {/* Aspect Ratio Container for Full Image Display on Mobile and Desktop */}
         <div className="relative w-full aspect-[16/10] sm:aspect-[21/9] lg:aspect-[2.8/1] min-h-[220px] max-h-[580px] bg-slate-950 overflow-hidden">
@@ -200,7 +201,7 @@ export default function HeroBannerSlider({ setActiveView, onOpenDonate }) {
 
         </div>
       </div>
-
     </div>
+  </div>
   );
 }
