@@ -138,13 +138,8 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FBFBFE] text-slate-800 selection:bg-crimson-500 selection:text-white font-sans">
+    <div className="min-h-screen flex flex-col bg-[#FCFDFE] text-slate-800 selection:bg-crimson-500 selection:text-white font-sans">
       
-      {/* 80G Tax Exemption Announcement Bar */}
-      <TaxMarquee
-        onOpenTaxCalc={() => setTaxCalcModalOpen(true)}
-      />
-
       {/* Modern Glassmorphic Sticky Header */}
       <Navbar
         activeView={activeView}
