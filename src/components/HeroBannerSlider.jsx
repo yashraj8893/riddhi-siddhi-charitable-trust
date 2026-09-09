@@ -1,34 +1,51 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, Heart, ArrowRight, ShieldCheck } from 'lucide-react';
-import { HERO_SLIDES } from '../data/trustData';
+import { ChevronLeft, ChevronRight, Heart, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
+import { HERO_SLIDES, GALLERY_ITEMS } from '../data/trustData';
+
+// Pick 12 diverse ground impact photos for the continuous moving photo track
+const STREAM_PHOTOS = GALLERY_ITEMS.slice(0, 12);
 
 export default function HeroBannerSlider({ setActiveView, onOpenDonate }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [progress, setProgress] = useState(0);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
   const totalSlides = HERO_SLIDES.length;
+  const SLIDE_DURATION_MS = 4500;
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % totalSlides);
+    setProgress(0);
   }, [totalSlides]);
 
   const prevSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+    setProgress(0);
   }, [totalSlides]);
 
   const goToSlide = (idx) => {
     setCurrentIndex(idx);
+    setProgress(0);
   };
 
-  // Auto-advance carousel
+  // Continuous auto-sliding timer with smooth progress bar
   useEffect(() => {
     if (isPaused) return;
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 5000);
-    return () => clearInterval(interval);
+
+    const intervalStep = 50; // update every 50ms
+    const timer = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          nextSlide();
+          return 0;
+        }
+        return prev + (intervalStep / SLIDE_DURATION_MS) * 100;
+      });
+    }, intervalStep);
+
+    return () => clearInterval(timer);
   }, [isPaused, nextSlide]);
 
   // Touch Swipe Support
@@ -66,120 +83,169 @@ export default function HeroBannerSlider({ setActiveView, onOpenDonate }) {
   };
 
   return (
-    <div 
-      className="relative w-full bg-slate-900 select-none overflow-hidden group shadow-md"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-    >
-      {/* Aspect Ratio Container for Responsive Full Image View */}
-      <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] lg:aspect-[2.8/1] max-h-[580px] bg-slate-950 overflow-hidden">
-        
-        {HERO_SLIDES.map((slide, idx) => {
-          const isActive = idx === currentIndex;
-          return (
-            <div
-              key={slide.id}
-              onClick={handleSlideAction}
-              className={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out cursor-pointer ${
-                isActive ? 'opacity-100 z-10 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
-              }`}
+    <div className="w-full bg-slate-950 overflow-hidden select-none">
+      
+      {/* 🌟 1. MAIN HERO BANNER CAROUSEL WITH PHYSICAL HORIZONTAL SLIDE MOTION */}
+      <div 
+        className="relative w-full overflow-hidden group"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        {/* Animated Moving Progress Bar at Top */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-white/10 z-30 overflow-hidden pointer-events-none">
+          <div 
+            className="h-full bg-gradient-to-r from-amber-400 via-crimson-500 to-amber-400 transition-all ease-linear"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+
+        {/* Aspect Ratio Container for Full Image Display */}
+        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] lg:aspect-[2.8/1] max-h-[580px] bg-slate-950 overflow-hidden">
+          
+          {/* Moving Horizontal Slider Track */}
+          <div 
+            className="flex w-full h-full transition-transform duration-700 ease-out will-change-transform"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {HERO_SLIDES.map((slide, idx) => {
+              const isActive = idx === currentIndex;
+              return (
+                <div
+                  key={slide.id}
+                  onClick={handleSlideAction}
+                  className="w-full h-full flex-shrink-0 relative cursor-pointer overflow-hidden bg-slate-950"
+                  style={{ width: '100%' }}
+                >
+                  {/* Banner Image with Ken Burns Active Floating Motion */}
+                  <img
+                    src={slide.image}
+                    alt={slide.alt}
+                    loading={idx === 0 ? "eager" : "lazy"}
+                    className={`w-full h-full object-cover sm:object-fill object-center transition-transform duration-1000 ${
+                      isActive ? 'animate-kenburns scale-100' : 'scale-100'
+                    }`}
+                    onError={(e) => {
+                      e.target.src = "https://www.riddhisiddhicharitabletrust.org/static/images/homepage/Our-Mission.webp";
+                    }}
+                  />
+
+                  {/* Gradient Overlay for Controls Readability */}
+                  <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none"></div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Floating CTA Buttons on Slide */}
+          <div className="absolute bottom-4 sm:bottom-6 right-4 sm:right-8 z-20 flex items-center gap-2">
+            <button
+              onClick={handleDonateAction}
+              className="px-4 sm:px-6 py-2 sm:py-2.5 bg-crimson-600 hover:bg-crimson-700 text-white font-extrabold text-xs sm:text-sm rounded-full shadow-xl hover:scale-105 active:scale-95 transition-all flex items-center gap-1.5 border border-white/20 animate-pulse"
             >
-              {/* Banner Image */}
-              <img
-                src={slide.image}
-                alt={slide.alt}
-                loading={idx === 0 ? "eager" : "lazy"}
-                className="w-full h-full object-cover sm:object-fill object-center"
-                onError={(e) => {
-                  e.target.src = "https://www.riddhisiddhicharitabletrust.org/static/images/homepage/Our-Mission.webp";
-                }}
-              />
+              <Heart className="w-3.5 h-3.5 fill-white" />
+              <span>{currentSlide.btnText || "Donate Now"}</span>
+            </button>
+            <button
+              onClick={handleSlideAction}
+              className="hidden sm:inline-flex px-4 py-2.5 bg-white/90 hover:bg-white text-slate-900 font-bold text-xs rounded-full shadow-md hover:scale-105 active:scale-95 transition-all items-center gap-1 backdrop-blur-sm"
+            >
+              <span>Learn More</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
 
-              {/* Bottom Subtle Gradient for controls clarity */}
-              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
-            </div>
-          );
-        })}
+          {/* Slide Counter Pill */}
+          <div className="absolute top-4 right-4 z-20 bg-black/60 backdrop-blur-md text-white/90 text-[11px] font-mono font-bold px-2.5 py-1 rounded-full border border-white/15 flex items-center gap-1.5 shadow-sm">
+            <span className="text-amber-400 font-bold">{currentIndex + 1}</span>
+            <span className="text-white/40">/</span>
+            <span>{totalSlides}</span>
+          </div>
 
-        {/* Floating Quick Action CTA on Slide */}
-        <div className="absolute bottom-4 sm:bottom-6 right-4 sm:right-8 z-20 flex items-center gap-2">
+          {/* Previous Slide Button */}
           <button
-            onClick={handleDonateAction}
-            className="px-4 sm:px-6 py-2 sm:py-2.5 bg-crimson-600 hover:bg-crimson-700 text-white font-extrabold text-xs sm:text-sm rounded-full shadow-xl hover:scale-105 active:scale-95 transition-all flex items-center gap-1.5 border border-white/20"
+            onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+            aria-label="Previous Slide"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/50 hover:bg-black/80 text-white backdrop-blur-sm border border-white/20 flex items-center justify-center transition-all opacity-80 group-hover:opacity-100 hover:scale-110 shadow-lg"
           >
-            <Heart className="w-3.5 h-3.5 fill-white" />
-            <span>{currentSlide.btnText || "Donate Now"}</span>
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
+
+          {/* Next Slide Button */}
           <button
-            onClick={handleSlideAction}
-            className="hidden sm:inline-flex px-4 py-2.5 bg-white/90 hover:bg-white text-slate-900 font-bold text-xs rounded-full shadow-md hover:scale-105 active:scale-95 transition-all items-center gap-1 backdrop-blur-sm"
+            onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+            aria-label="Next Slide"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/50 hover:bg-black/80 text-white backdrop-blur-sm border border-white/20 flex items-center justify-center transition-all opacity-80 group-hover:opacity-100 hover:scale-110 shadow-lg"
           >
-            <span>Learn More</span>
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+
+          {/* Indicator Navigation Dots */}
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 px-3 py-1.5 bg-black/50 backdrop-blur-md rounded-full border border-white/10">
+            {HERO_SLIDES.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={(e) => { e.stopPropagation(); goToSlide(idx); }}
+                aria-label={`Go to slide ${idx + 1}`}
+                className={`transition-all rounded-full ${
+                  idx === currentIndex
+                    ? 'w-6 h-2 bg-amber-400 shadow-sm'
+                    : 'w-2 h-2 bg-white/50 hover:bg-white/90'
+                }`}
+              />
+            ))}
+          </div>
+
+        </div>
+      </div>
+
+      {/* 🌟 2. CONTINUOUSLY MOVING PHOTO STREAM (MARQUEE) */}
+      <div className="bg-slate-900 border-y border-slate-800 py-3 overflow-hidden relative">
+        <div className="max-w-7xl mx-auto px-4 mb-2 flex items-center justify-between text-xs">
+          <div className="flex items-center gap-2 text-slate-300 font-bold">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span className="uppercase tracking-wider text-[11px] text-amber-400 font-extrabold">Live Ground Operations</span>
+            <span className="hidden sm:inline text-slate-400 font-normal">• 280+ Real Beneficiary Photos</span>
+          </div>
+          <button
+            onClick={() => { setActiveView('media'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+            className="text-xs font-bold text-trust-300 hover:text-white flex items-center gap-1 transition-colors"
+          >
+            <span>View Full Archive</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>
 
-        {/* Slide Counter Pill */}
-        <div className="absolute top-4 right-4 z-20 bg-black/60 backdrop-blur-md text-white/90 text-[11px] font-mono font-bold px-2.5 py-1 rounded-full border border-white/15 flex items-center gap-1.5">
-          <span className="text-amber-400 font-bold">{currentIndex + 1}</span>
-          <span className="text-white/40">/</span>
-          <span>{totalSlides}</span>
-        </div>
-
-        {/* Previous Button */}
-        <button
-          onClick={(e) => { e.stopPropagation(); prevSlide(); }}
-          aria-label="Previous Slide"
-          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-sm border border-white/20 flex items-center justify-center transition-all opacity-70 group-hover:opacity-100 hover:scale-110"
-        >
-          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-        </button>
-
-        {/* Next Button */}
-        <button
-          onClick={(e) => { e.stopPropagation(); nextSlide(); }}
-          aria-label="Next Slide"
-          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-sm border border-white/20 flex items-center justify-center transition-all opacity-70 group-hover:opacity-100 hover:scale-110"
-        >
-          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-        </button>
-
-        {/* Indicator Dots */}
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 px-3 py-1.5 bg-black/40 backdrop-blur-md rounded-full border border-white/10">
-          {HERO_SLIDES.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={(e) => { e.stopPropagation(); goToSlide(idx); }}
-              aria-label={`Go to slide ${idx + 1}`}
-              className={`transition-all rounded-full ${
-                idx === currentIndex
-                  ? 'w-6 h-2 bg-amber-400 shadow-sm'
-                  : 'w-2 h-2 bg-white/50 hover:bg-white/90'
-              }`}
-            />
-          ))}
-        </div>
-
-      </div>
-
-      {/* Trust & Tax Deduction Strip below Banner */}
-      <div className="bg-gradient-to-r from-trust-900 via-trust-950 to-slate-950 text-white py-2.5 px-4 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs">
-          <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-            <span className="font-semibold text-slate-200">
-              Riddhi Siddhi Charitable Trust • Registered NGO (Reg No: E30149 • PAN: AACTR3220R)
-            </span>
-          </div>
-          <div className="flex items-center gap-2 text-amber-300 font-bold">
-            <span className="bg-amber-400/20 px-2 py-0.5 rounded text-[11px] font-mono">Section 80G</span>
-            <span>All Donations Legally Entitled to 50% Tax Exemption</span>
+        {/* Seamless Infinite Photo Stream Track */}
+        <div className="w-full overflow-hidden flex">
+          <div className="animate-photo-marquee flex items-center gap-3">
+            {[...STREAM_PHOTOS, ...STREAM_PHOTOS].map((photo, idx) => (
+              <div
+                key={`${photo.id}-${idx}`}
+                onClick={() => { setActiveView('media'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                className="w-40 sm:w-52 h-24 sm:h-32 rounded-xl overflow-hidden flex-shrink-0 relative group/card cursor-pointer border border-slate-800 bg-slate-950 shadow-md hover:scale-105 transition-transform"
+              >
+                <img
+                  src={photo.image}
+                  alt={photo.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-500"
+                  onError={(e) => {
+                    e.target.src = "https://www.riddhisiddhicharitabletrust.org/static/images/homepage/Our-Mission.webp";
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity p-2 flex flex-col justify-end text-white text-[10px]">
+                  <span className="font-bold text-amber-300 truncate">{photo.category}</span>
+                  <span className="truncate text-slate-200">{photo.title}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
+
     </div>
   );
 }
