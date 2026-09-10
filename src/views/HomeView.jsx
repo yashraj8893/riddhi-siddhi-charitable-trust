@@ -177,35 +177,27 @@ export default function HomeView({
                 />
               </div>
 
-              <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+              <div className="p-4 sm:p-5 space-y-3">
                 <div>
-                  <h3 className="font-display font-bold text-base text-trust-950 line-clamp-1">
-                    {appeal.patientName}
-                  </h3>
-                </div>
-
-                <div className="space-y-3 pt-3 border-t border-slate-100">
-                  <div>
-                    <div className="flex justify-between text-xs font-bold mb-1.5">
-                      <span className="text-slate-600">Raised: ₹{appeal.raisedAmount.toLocaleString('en-IN')}</span>
-                      <span className="text-crimson-600">Needed more: ₹{(appeal.targetAmount - appeal.raisedAmount).toLocaleString('en-IN')}</span>
-                    </div>
-                    <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-crimson-600 rounded-full"
-                        style={{ width: `${appeal.progress}%` }}
-                      ></div>
-                    </div>
+                  <div className="flex justify-between items-center text-xs font-bold mb-1.5">
+                    <span className="text-slate-600">Raised: ₹{appeal.raisedAmount.toLocaleString('en-IN')}</span>
+                    <span className="text-crimson-600">Needed more: ₹{(appeal.targetAmount - appeal.raisedAmount).toLocaleString('en-IN')}</span>
                   </div>
-
-                  <button
-                    onClick={() => onOpenDonate('medical')}
-                    className="w-full btn-donate-primary py-2.5 rounded-full font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm hover:shadow-md transition-all"
-                  >
-                    <Heart className="w-3.5 h-3.5 fill-white" />
-                    <span>Donate to Save Life</span>
-                  </button>
+                  <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-crimson-600 rounded-full"
+                      style={{ width: `${appeal.progress}%` }}
+                    ></div>
+                  </div>
                 </div>
+
+                <button
+                  onClick={() => onOpenDonate('medical')}
+                  className="w-full btn-donate-primary py-2.5 rounded-full font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm hover:shadow-md transition-all"
+                >
+                  <Heart className="w-3.5 h-3.5 fill-white" />
+                  <span>Donate to Save Life</span>
+                </button>
               </div>
             </div>
           ))}
