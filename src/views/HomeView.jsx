@@ -188,7 +188,7 @@ export default function HomeView({
                   <div>
                     <div className="flex justify-between text-xs font-bold mb-1.5">
                       <span className="text-slate-600">Raised: ₹{appeal.raisedAmount.toLocaleString('en-IN')}</span>
-                      <span className="text-crimson-600">Goal: ₹{appeal.targetAmount.toLocaleString('en-IN')}</span>
+                      <span className="text-crimson-600">Needed: ₹{(appeal.targetAmount - appeal.raisedAmount).toLocaleString('en-IN')}</span>
                     </div>
                     <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
                       <div
