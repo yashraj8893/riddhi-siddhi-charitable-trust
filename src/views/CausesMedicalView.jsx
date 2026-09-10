@@ -73,7 +73,7 @@ export default function CausesMedicalView({ onOpenDonate }) {
                         Raised: <span className="font-mono text-emerald-700 font-extrabold">₹{patient.raisedAmount.toLocaleString('en-IN')}</span>
                       </span>
                       <span className="text-crimson-600">
-                        Needed: <span className="font-mono font-extrabold">₹{(patient.targetAmount - patient.raisedAmount).toLocaleString('en-IN')}</span>
+                        Needed more: <span className="font-mono font-extrabold">₹{(patient.targetAmount - patient.raisedAmount).toLocaleString('en-IN')}</span>
                       </span>
                     </div>
 
