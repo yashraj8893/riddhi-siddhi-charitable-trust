@@ -182,9 +182,6 @@ export default function HomeView({
                   <h3 className="font-display font-bold text-base text-trust-950 line-clamp-1">
                     {appeal.patientName}
                   </h3>
-                  <p className="text-xs text-slate-500 line-clamp-2 mt-1 leading-relaxed">
-                    {appeal.description}
-                  </p>
                 </div>
 
                 <div className="space-y-3 pt-3 border-t border-slate-100">
