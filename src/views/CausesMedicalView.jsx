@@ -47,18 +47,12 @@ export default function CausesMedicalView({ onOpenDonate }) {
               key={patient.id}
               className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
             >
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
                 <img
                   src={patient.image}
                   alt={patient.patientName}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-4 right-4 bg-crimson-500 text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
-                  {patient.disease}
-                </div>
-                <div className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-xl font-semibold">
-                  Age: {patient.age} • {patient.hospital}
-                </div>
               </div>
 
               <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
