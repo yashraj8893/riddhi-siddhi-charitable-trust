@@ -21,7 +21,7 @@ export default function HomeView({
   };
 
   return (
-    <div className="space-y-10 sm:space-y-16 pb-16">
+    <div className="space-y-8 sm:space-y-10 pb-12">
       
       {/* 🌟 0. OFFICIAL HERO BANNER SLIDER */}
       <HeroBannerSlider 
@@ -29,18 +29,18 @@ export default function HomeView({
         onOpenDonate={onOpenDonate} 
       />
       
-      {/* 🌟 1. MISSION & IMPACT HERO SECTION (CLEAN & CENTERED) */}
-      <section className="relative bg-gradient-to-b from-trust-50/20 via-white to-slate-50/30 border-b border-slate-200/60 py-8 sm:py-10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      {/* 🌟 1. MISSION & IMPACT AT A GLANCE (UNIFIED, CLEAN & COMPACT) */}
+      <section className="relative bg-gradient-to-b from-trust-50/20 via-white to-slate-50/30 border-b border-slate-200/60 py-6 sm:py-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           
           {/* Trust Badge */}
           <div className="inline-flex items-center gap-2 bg-trust-50 border border-trust-200/80 text-trust-800 px-3.5 py-1 rounded-full text-xs font-bold shadow-xs">
             <ShieldCheck className="w-3.5 h-3.5 text-trust-600 flex-shrink-0" />
-            <span>Section 80G Certified • 50% Tax Exemption • Estd. 2014</span>
+            <span>Section 80G Certified • 50% Tax Exemption • Registered NGO Estd. 2014</span>
           </div>
 
           {/* Editorial Headline */}
-          <h1 className="font-display font-black text-2.5xl sm:text-3.5xl lg:text-4xl text-trust-950 tracking-tight leading-tight">
+          <h1 className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-trust-950 tracking-tight leading-tight">
             Every child nourished, every life healed, <br className="hidden sm:block" />
             <span className="text-crimson-600">every elder honored.</span>
           </h1>
@@ -51,7 +51,7 @@ export default function HomeView({
           </p>
 
           {/* Primary Action Buttons */}
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+          <div className="pt-1 flex flex-wrap items-center justify-center gap-3">
             <button
               onClick={() => onOpenDonate()}
               className="btn-donate-primary text-xs sm:text-sm px-6 py-2.5 rounded-full flex items-center gap-2 shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all"
@@ -68,75 +68,65 @@ export default function HomeView({
             </button>
           </div>
 
-          {/* Key Trust Counters */}
-          <div className="pt-6 border-t border-slate-200/70 grid grid-cols-3 gap-4 max-w-lg mx-auto text-center">
-            <div>
-              <span className="block font-display font-black text-xl sm:text-2xl text-trust-950 font-mono">150,000+</span>
-              <span className="text-xs text-slate-500 font-medium mt-0.5 block">Meals Provided</span>
+          {/* 4 Impact Stat Cards (Clean, Non-Redundant Grid) */}
+          <div className="pt-4 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 text-left">
+            <div className="bg-white rounded-2xl p-4 shadow-xs border border-slate-200/80 hover:shadow-sm transition-all flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-trust-50 text-trust-600 flex items-center justify-center flex-shrink-0">
+                <Utensils className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="font-display font-black text-lg sm:text-xl text-trust-950 block font-mono">
+                  150,000+
+                </span>
+                <span className="text-[11px] font-medium text-slate-500 block leading-tight">
+                  Meals Served
+                </span>
+              </div>
             </div>
-            <div>
-              <span className="block font-display font-black text-xl sm:text-2xl text-trust-950 font-mono">65+</span>
-              <span className="text-xs text-slate-500 font-medium mt-0.5 block">Children in Shelter</span>
+
+            <div className="bg-white rounded-2xl p-4 shadow-xs border border-slate-200/80 hover:shadow-sm transition-all flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-crimson-50 text-crimson-600 flex items-center justify-center flex-shrink-0">
+                <GraduationCap className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="font-display font-black text-lg sm:text-xl text-trust-950 block font-mono">
+                  5,000+
+                </span>
+                <span className="text-[11px] font-medium text-slate-500 block leading-tight">
+                  School Kits
+                </span>
+              </div>
             </div>
-            <div>
-              <span className="block font-display font-black text-xl sm:text-2xl text-crimson-600 font-mono">50%</span>
-              <span className="text-xs text-slate-500 font-medium mt-0.5 block">80G Tax Saved</span>
+
+            <div className="bg-white rounded-2xl p-4 shadow-xs border border-slate-200/80 hover:shadow-sm transition-all flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-trust-50 text-trust-700 flex items-center justify-center flex-shrink-0">
+                <HeartHandshake className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="font-display font-black text-lg sm:text-xl text-trust-950 block font-mono">
+                  1,200+
+                </span>
+                <span className="text-[11px] font-medium text-slate-500 block leading-tight">
+                  Seniors Cared
+                </span>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-4 shadow-xs border border-slate-200/80 hover:shadow-sm transition-all flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-crimson-50 text-crimson-600 flex items-center justify-center flex-shrink-0">
+                <Activity className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="font-display font-black text-lg sm:text-xl text-trust-950 block font-mono">
+                  500+
+                </span>
+                <span className="text-[11px] font-medium text-slate-500 block leading-tight">
+                  Surgeries Funded
+                </span>
+              </div>
             </div>
           </div>
 
-        </div>
-      </section>
-      
-      {/* 🌟 1. IMPACT AT A GLANCE (4 CRISP STAT CARDS) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
-          <div className="bg-white rounded-2xl p-5 shadow-xs border border-slate-200/80 text-center hover:shadow-sm transition-all">
-            <div className="w-10 h-10 mx-auto rounded-xl bg-trust-50 text-trust-600 flex items-center justify-center mb-2.5">
-              <Utensils className="w-5 h-5" />
-            </div>
-            <span className="font-display font-black text-2xl sm:text-3xl text-trust-950 block font-mono">
-              150,000+
-            </span>
-            <span className="text-xs font-semibold text-slate-500 mt-1 block">
-              Nutritious Meals Served
-            </span>
-          </div>
-
-          <div className="bg-white rounded-2xl p-5 shadow-xs border border-slate-200/80 text-center hover:shadow-sm transition-all">
-            <div className="w-10 h-10 mx-auto rounded-xl bg-crimson-50 text-crimson-600 flex items-center justify-center mb-2.5">
-              <GraduationCap className="w-5 h-5" />
-            </div>
-            <span className="font-display font-black text-2xl sm:text-3xl text-trust-950 block font-mono">
-              5,000+
-            </span>
-            <span className="text-xs font-semibold text-slate-500 mt-1 block">
-              School Kits Distributed
-            </span>
-          </div>
-
-          <div className="bg-white rounded-2xl p-5 shadow-xs border border-slate-200/80 text-center hover:shadow-sm transition-all">
-            <div className="w-10 h-10 mx-auto rounded-xl bg-trust-50 text-trust-700 flex items-center justify-center mb-2.5">
-              <HeartHandshake className="w-5 h-5" />
-            </div>
-            <span className="font-display font-black text-2xl sm:text-3xl text-trust-950 block font-mono">
-              1,200+
-            </span>
-            <span className="text-xs font-semibold text-slate-500 mt-1 block">
-              Seniors Supported
-            </span>
-          </div>
-
-          <div className="bg-white rounded-2xl p-5 shadow-xs border border-slate-200/80 text-center hover:shadow-sm transition-all">
-            <div className="w-10 h-10 mx-auto rounded-xl bg-crimson-50 text-crimson-600 flex items-center justify-center mb-2.5">
-              <Activity className="w-5 h-5" />
-            </div>
-            <span className="font-display font-black text-2xl sm:text-3xl text-trust-950 block font-mono">
-              500+
-            </span>
-            <span className="text-xs font-semibold text-slate-500 mt-1 block">
-              Surgeries &amp; Medical Aid
-            </span>
-          </div>
         </div>
       </section>
 
