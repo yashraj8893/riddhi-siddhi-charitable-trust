@@ -29,92 +29,61 @@ export default function HomeView({
         onOpenDonate={onOpenDonate} 
       />
       
-      {/* 🌟 1. MISSION & IMPACT HERO SECTION */}
-      <section className="relative bg-gradient-to-b from-trust-50/30 via-white to-slate-50/40 border-b border-slate-200/60 pt-4 pb-8 lg:pt-6 lg:pb-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
-            
-            {/* Left Column: Mission & Trust */}
-            <div className="lg:col-span-7 space-y-4 text-left">
-              
-              {/* Trust Badge */}
-              <div className="inline-flex items-center gap-2 bg-trust-50 border border-trust-200/80 text-trust-800 px-3 py-1 rounded-full text-xs font-bold shadow-xs">
-                <ShieldCheck className="w-3.5 h-3.5 text-trust-600 flex-shrink-0" />
-                <span>Section 80G Certified • 50% Tax Exemption • Estd. 2014</span>
-              </div>
-
-              {/* Dignified Editorial Headline */}
-              <h1 className="font-display font-black text-2.5xl sm:text-3.5xl lg:text-4xl text-trust-950 tracking-tight leading-[1.2]">
-                Every child nourished, <br />
-                every life healed, <br />
-                <span className="text-crimson-600">every elder honored.</span>
-              </h1>
-
-              {/* Mission Statement */}
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
-                Since 2014, <strong className="text-trust-900 font-semibold">Riddhi Siddhi Charitable Trust</strong> has been on the frontlines across Maharashtra—providing safe 24/7 shelter for orphaned children in Airoli, daily meals for daily-wage families, and funding life-saving pediatric surgeries.
-              </p>
-
-              {/* Primary Action Buttons */}
-              <div className="pt-1 flex flex-wrap items-center gap-3">
-                <button
-                  onClick={() => onOpenDonate()}
-                  className="btn-donate-primary text-xs sm:text-sm px-6 py-2.5 rounded-full flex items-center gap-2 shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all"
-                >
-                  <Heart className="w-4 h-4 fill-white animate-pulse" />
-                  <span>Donate to a Cause</span>
-                </button>
-                <button
-                  onClick={() => navTo('projects')}
-                  className="px-5 py-2.5 bg-white hover:bg-trust-50 text-trust-900 font-bold text-xs sm:text-sm rounded-full border border-slate-200 hover:border-trust-300 shadow-xs transition-all flex items-center gap-1.5"
-                >
-                  <span>Explore 9 Programs</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
-                </button>
-              </div>
-
-              {/* Key Trust Counters */}
-              <div className="pt-4 border-t border-slate-200/70 grid grid-cols-3 gap-3 max-w-md">
-                <div>
-                  <span className="block font-display font-black text-lg sm:text-xl text-trust-950 font-mono">150,000+</span>
-                  <span className="text-[11px] text-slate-500 font-medium">Meals Provided</span>
-                </div>
-                <div>
-                  <span className="block font-display font-black text-lg sm:text-xl text-trust-950 font-mono">65+</span>
-                  <span className="text-[11px] text-slate-500 font-medium">Children in Shelter</span>
-                </div>
-                <div>
-                  <span className="block font-display font-black text-lg sm:text-xl text-crimson-600 font-mono">50%</span>
-                  <span className="text-[11px] text-slate-500 font-medium">80G Tax Saved</span>
-                </div>
-              </div>
-
-            </div>
-
-            {/* Right Column: High-Impact Visual Card showcasing Children & Operations */}
-            <div className="lg:col-span-5">
-              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-slate-200/90 shadow-md bg-slate-900 group">
-                <img
-                  src="https://www.riddhisiddhicharitabletrust.org/static/images/orphanage/Supporting-Orphans-A-Commitment-to-Social-Work-in-India.webp"
-                  alt="Children at Riddhi Siddhi Charitable Trust Shelter"
-                  className="w-full h-64 sm:h-72 lg:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 pointer-events-none"></div>
-                <div className="absolute top-3 left-3 bg-crimson-600 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
-                  Airoli Shelter Ashram
-                </div>
-                <div className="absolute bottom-3 inset-x-3 bg-white/95 backdrop-blur-md rounded-xl p-3 border border-slate-200 text-left shadow-sm">
-                  <span className="block text-xs font-black text-trust-950 font-display">
-                    Nurturing 65+ Orphaned &amp; Destitute Children
-                  </span>
-                  <span className="block text-[11px] text-slate-600 font-medium mt-0.5">
-                    Safe housing, daily balanced meals, school education &amp; loving medical care.
-                  </span>
-                </div>
-              </div>
-            </div>
-
+      {/* 🌟 1. MISSION & IMPACT HERO SECTION (CLEAN & CENTERED) */}
+      <section className="relative bg-gradient-to-b from-trust-50/20 via-white to-slate-50/30 border-b border-slate-200/60 py-8 sm:py-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+          
+          {/* Trust Badge */}
+          <div className="inline-flex items-center gap-2 bg-trust-50 border border-trust-200/80 text-trust-800 px-3.5 py-1 rounded-full text-xs font-bold shadow-xs">
+            <ShieldCheck className="w-3.5 h-3.5 text-trust-600 flex-shrink-0" />
+            <span>Section 80G Certified • 50% Tax Exemption • Estd. 2014</span>
           </div>
+
+          {/* Editorial Headline */}
+          <h1 className="font-display font-black text-2.5xl sm:text-3.5xl lg:text-4xl text-trust-950 tracking-tight leading-tight">
+            Every child nourished, every life healed, <br className="hidden sm:block" />
+            <span className="text-crimson-600">every elder honored.</span>
+          </h1>
+
+          {/* Mission Statement */}
+          <p className="text-slate-600 text-xs sm:text-sm lg:text-base leading-relaxed max-w-2xl mx-auto">
+            Since 2014, <strong className="text-trust-900 font-semibold">Riddhi Siddhi Charitable Trust</strong> has been on the frontlines across Maharashtra—providing safe 24/7 shelter for orphaned children in Airoli, daily meals for daily-wage families, and funding life-saving pediatric surgeries.
+          </p>
+
+          {/* Primary Action Buttons */}
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+            <button
+              onClick={() => onOpenDonate()}
+              className="btn-donate-primary text-xs sm:text-sm px-6 py-2.5 rounded-full flex items-center gap-2 shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all"
+            >
+              <Heart className="w-4 h-4 fill-white animate-pulse" />
+              <span>Donate to a Cause</span>
+            </button>
+            <button
+              onClick={() => navTo('projects')}
+              className="px-5 py-2.5 bg-white hover:bg-trust-50 text-trust-900 font-bold text-xs sm:text-sm rounded-full border border-slate-200 hover:border-trust-300 shadow-xs transition-all flex items-center gap-1.5"
+            >
+              <span>Explore 9 Programs</span>
+              <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
+            </button>
+          </div>
+
+          {/* Key Trust Counters */}
+          <div className="pt-6 border-t border-slate-200/70 grid grid-cols-3 gap-4 max-w-lg mx-auto text-center">
+            <div>
+              <span className="block font-display font-black text-xl sm:text-2xl text-trust-950 font-mono">150,000+</span>
+              <span className="text-xs text-slate-500 font-medium mt-0.5 block">Meals Provided</span>
+            </div>
+            <div>
+              <span className="block font-display font-black text-xl sm:text-2xl text-trust-950 font-mono">65+</span>
+              <span className="text-xs text-slate-500 font-medium mt-0.5 block">Children in Shelter</span>
+            </div>
+            <div>
+              <span className="block font-display font-black text-xl sm:text-2xl text-crimson-600 font-mono">50%</span>
+              <span className="text-xs text-slate-500 font-medium mt-0.5 block">80G Tax Saved</span>
+            </div>
+          </div>
+
         </div>
       </section>
       
